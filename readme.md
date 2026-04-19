@@ -72,7 +72,7 @@ python db_init.py
 - Password: `password123`
 
 ## Notes on Images
-The `/static/images/<filename>` route in `app.py` maps filenames to an external artifact directory. If you want to use local images instead, update `artifact_dir` in `app.py` and place assets in `static/images/`.
+Images are served directly from `static/images/`. Placeholder assets are included so the UI renders correctly out of the box.
 
 ## Useful Commands (All-in-One)
 ```bash
