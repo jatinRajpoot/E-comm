@@ -60,7 +60,7 @@ python app.py
 Then open: `http://127.0.0.1:5000`
 
 ## Database and Seed Data
-- The app uses `sqlite:///ecommerce_v2.db`.
+- The app uses `sqlite:///ecommerce_v2.db` (set in `app.py` and `db_init.py`), and you can rename it by updating those configuration values.
 - On startup, the app auto-creates tables and seeds demo data if fewer than 15 products exist.
 - To reset and re-seed manually:
 ```bash
