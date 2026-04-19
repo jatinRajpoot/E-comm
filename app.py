@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, url_for, request, flash, session, send_from_directory
+from flask import Flask, render_template, redirect, url_for, request, flash, session
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import db, User, Product, Order, OrderItem, Address, Newsletter
@@ -18,35 +18,6 @@ login_manager.init_app(app)
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
-
-# Custom route to serve generated premium images directly from the artifact directory
-@app.route('/static/images/<path:filename>')
-def custom_images(filename):
-    artifact_dir = r"C:\Users\bharti\.gemini\antigravity\brain\0b984440-1902-4055-a7be-e2b815945298"
-    mapping = {
-        'logo.png': 'logo_png_1775049109309.png',
-        'hero.jpg': 'hero_jpg_1775045280131.png',
-        'watch.png': 'watch_png_1775045302469.png',
-        'headphones.png': 'headphones_png_1775045328052.png',
-        'laptop.png': 'laptop_png_1775045356794.png',
-        'lamp.png': 'lamp_png_1775050372527.png',
-        'speaker.png': 'speaker_png_1775050400907.png',
-        'vr.png': 'vr_png_1775050424247.png',
-        'keyboard.png': 'keyboard_png_1775050448628.png',
-        'mousepad.png': 'mousepad_png_1775050473970.png',
-        'tablet.png': 'tablet_png_1775050498489.png',
-        'sale_banner.png': 'sale_banner_png_1775052083639.png',
-        'sale_bg.jpg': 'sale_bg_jpg_1775052107611.png',
-        'qr_code.png': 'qr_code_png_1775052126035.png',
-        'dress.png': 'dress_png_1775058903002.png',
-        'jacket.png': 'jacket_png_1775058951015.png',
-        'scarf.png': 'scarf_png_1775059013353.png',
-        'necklace.png': 'necklace_png_1775059057888.png',
-        'ring.png': 'ring_png_1775059093220.png',
-        'earrings.png': 'earrings_png_1775059115590.png'
-    }
-    real_filename = mapping.get(filename, filename)
-    return send_from_directory(artifact_dir, real_filename)
 
 # Routes
 @app.route('/')
