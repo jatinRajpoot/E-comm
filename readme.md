@@ -24,7 +24,7 @@ Flask-based e-commerce demo application with product browsing, cart, checkout, a
 - `static/` — CSS and image assets
 
 ## Prerequisites
-- Python 3.9+ (3.10+ recommended)
+- Python 3.9+ (3.10+ recommended for longer support and better performance)
 
 ## Setup (Create a Virtual Environment)
 From the project root:
