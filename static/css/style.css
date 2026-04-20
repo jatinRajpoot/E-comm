@@ -227,7 +227,7 @@ nav {
 
 .hero-right {
     flex: 1;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/sale_bg.jpg');
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/sale_bg.png');
     background-size: cover;
     background-position: center;
     display: flex;
